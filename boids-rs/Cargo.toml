@@ -1,0 +1,8 @@
+[package]
+name = "boids-rs"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+[dependencies]
+nannou = "0.18.1"
