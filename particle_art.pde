@@ -13,6 +13,7 @@ int ZONE_DIMENSION = int(640 / 3);
 
 void setup() {
   fullScreen(P2D);
+  // size(600, 335, P2D);
   noSmooth();
 
   colorMode(HSB, 360, 100, 100, 100);
