@@ -3,15 +3,14 @@ use nannou::prelude::*;
 const MAX_SPEED: f32 = 1.0;
 const PERCEPTION_RADIUS: f32 = 100.0;
 const STEERING_FORCE: f32 = 0.025;
-const RADIUS: f32 = 4.0;
 
 #[derive(PartialEq, Clone)]
 pub struct Boid {
     // position is the boid's absolute point in space
-    position: Vec2,
+    pub position: Vec2,
 
     // velocity is a unit vector
-    velocity: Vec2,
+    pub velocity: Vec2,
 }
 
 impl Boid {
@@ -100,18 +99,5 @@ impl Boid {
         }
 
         align + separate + centroid
-    }
-
-    pub fn draw(&self, draw: &Draw) {
-        draw.tri()
-            .xy(self.position)
-            .points(
-                Point2::new(RADIUS, 0.0),
-                Point2::new(-RADIUS, -RADIUS),
-                Point2::new(-RADIUS, RADIUS),
-            )
-            .w_h(RADIUS * 2., RADIUS * 2.)
-            .rotate(self.velocity.angle())
-            .hsv(1.0, 1.0, 1.0);
     }
 }
